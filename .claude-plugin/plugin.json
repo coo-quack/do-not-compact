@@ -1,0 +1,8 @@
+{
+  "name": "reload-claude-md",
+  "description": "Reload CLAUDE.md files into context after conversation compaction",
+  "version": "1.0.0",
+  "author": {
+    "name": "coo-quack"
+  }
+}

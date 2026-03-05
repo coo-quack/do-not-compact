@@ -1,0 +1,18 @@
+{
+  "description": "Reload CLAUDE.md files after context compaction to preserve instructions",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/reload-claude-md.sh\"",
+            "timeout": 10,
+            "statusMessage": "Reloading CLAUDE.md..."
+          }
+        ]
+      }
+    ]
+  }
+}
