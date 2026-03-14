@@ -17,13 +17,8 @@ Files collected (in order):
 ## Installation
 
 ```bash
-claude /plugin install coo-quack/reload-claude-md
-```
-
-Or for local testing:
-
-```bash
-claude --plugin-dir /path/to/reload-claude-md
+npm install -g @coo-quack/reload-claude-md
+claude plugin install @coo-quack/reload-claude-md
 ```
 
 ## Requirements
