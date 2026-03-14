@@ -18,7 +18,7 @@ Files collected (in order):
 
 ```bash
 npm install -g @coo-quack/do-not-compact
-claude plugin install @coo-quack/do-not-compact
+claude plugin install @coo-quack/do-not-compact (not ready)
 ```
 
 ## Requirements
