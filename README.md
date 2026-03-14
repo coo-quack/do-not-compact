@@ -17,8 +17,8 @@ Files collected (in order):
 ## Installation
 
 ```bash
-npm install -g @coo-quack/reload-claude-md
-claude plugin install @coo-quack/reload-claude-md
+npm install -g @coo-quack/do-not-compact
+claude plugin install @coo-quack/do-not-compact
 ```
 
 ## Requirements
