@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate plugin manifest
+        run: node -e "const p = require('./.claude-plugin/plugin.json'); if (!p.name) throw new Error('missing name')"
+
+      - name: Validate package.json
+        run: node -e "const p = require('./package.json'); if (!p.name || !p.version) throw new Error('missing name or version')"
+
+      - name: Check hook script is executable
+        run: test -r hooks/reload-claude-md.sh
+
+      - name: Shellcheck hook script
+        run: shellcheck hooks/reload-claude-md.sh || true
