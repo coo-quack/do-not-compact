@@ -1,4 +1,4 @@
-# reload-claude-md
+# Don't Compact CLAUDE.md
 
 Claude Code plugin that reloads CLAUDE.md files into context after conversation compaction.
 
