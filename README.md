@@ -1,4 +1,4 @@
-# reload-claude-md
+# Don't Compact CLAUDE.md
 
 Claude Code plugin that reloads CLAUDE.md files into context after conversation compaction.
 
@@ -17,13 +17,8 @@ Files collected (in order):
 ## Installation
 
 ```bash
-claude /plugin install coo-quack/reload-claude-md
-```
-
-Or for local testing:
-
-```bash
-claude --plugin-dir /path/to/reload-claude-md
+npm install -g @coo-quack/do-not-compact
+claude plugin install @coo-quack/do-not-compact
 ```
 
 ## Requirements
