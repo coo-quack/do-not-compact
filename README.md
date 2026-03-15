@@ -16,10 +16,101 @@ Files collected (in order):
 
 ## Installation
 
+### Plugin install (recommended)
+
+Install in two commands from inside a Claude Code session:
+
+**1. Register the marketplace**
+
+```
+/plugin marketplace add coo-quack/claude-code-marketplace
+```
+
+**2. Install the plugin**
+
+```
+/plugin install do-not-compact@coo-quack
+```
+
+Done. The hooks are enabled automatically.
+
+> **Keeping up to date:** Third-party marketplaces have auto-update disabled by default. To receive automatic updates, run `/plugin` → **Marketplaces** tab → select the marketplace → **Enable auto-update**. You can also update manually from the same tab. See [Discover and install plugins](https://docs.anthropic.com/en/docs/claude-code/discover-plugins) for details.
+
+<details>
+<summary>npm install</summary>
+
+Install globally via npm and configure hooks manually:
+
 ```bash
 npm install -g @coo-quack/do-not-compact
-claude plugin install @coo-quack/do-not-compact (not ready)
 ```
+
+Update to the latest version:
+
+```bash
+npm update -g @coo-quack/do-not-compact
+```
+
+Then add to `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$(npm root -g)/@coo-quack/do-not-compact/hooks/reload-claude-md.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Manual setup (git clone)</summary>
+
+Clone the repository and configure hooks manually:
+
+```bash
+git clone https://github.com/coo-quack/do-not-compact.git ~/do-not-compact
+```
+
+Update to the latest version:
+
+```bash
+cd ~/do-not-compact && git pull
+```
+
+Then add to `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/do-not-compact/hooks/reload-claude-md.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+</details>
 
 ## Requirements
 
