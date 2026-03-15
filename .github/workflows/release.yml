@@ -84,3 +84,13 @@ jobs:
               --title "$VERSION" \
               --notes-file /tmp/release-notes.md
           fi
+
+      - name: Sync marketplace
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.MARKETPLACE_TOKEN }}
+        run: |
+          gh api repos/coo-quack/claude-code-marketplace/dispatches \
+            -f event_type=plugin-released \
+            -f 'client_payload[plugin]=do-not-compact' \
+            -f 'client_payload[version]=${{ needs.check.outputs.version }}'

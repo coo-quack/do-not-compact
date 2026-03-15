@@ -6,6 +6,10 @@ on:
 
 permissions: {}
 
+concurrency:
+  group: sync-main-to-develop
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -21,17 +25,16 @@ jobs:
         id: check
         run: |
           git fetch origin develop
-          DIFF=$(git log origin/develop..origin/main --oneline)
-          if [ -n "$DIFF" ]; then
-            echo "needed=true" >> $GITHUB_OUTPUT
-          else
+          if git merge-base --is-ancestor origin/main origin/develop; then
             echo "needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "needed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Merge main into develop
         if: steps.check.outputs.needed == 'true'
         run: |
-          git checkout develop
+          git checkout -B develop origin/develop
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git merge origin/main --no-edit
