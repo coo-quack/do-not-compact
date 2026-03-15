@@ -86,6 +86,7 @@ jobs:
           fi
 
       - name: Sync marketplace
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.MARKETPLACE_TOKEN }}
         run: |
