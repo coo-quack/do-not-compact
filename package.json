@@ -1,6 +1,6 @@
 {
   "name": "@coo-quack/do-not-compact",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Claude Code plugin that reloads CLAUDE.md files into context after conversation compaction",
   "homepage": "https://github.com/coo-quack/do-not-compact",
   "type": "module",
