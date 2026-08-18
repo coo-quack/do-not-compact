@@ -7,6 +7,17 @@
   - Reduces risk of package takeover attacks
   - Blocks immediate auto-merge of newly published packages
 
+## v1.1.2 (2026-08-18)
+
+### Fixes
+
+- Mint an app token for the marketplace sync workflow, which had been failing to authenticate (#47)
+
+### Maintenance
+
+- Update Node.js to 24.19.0 in CI (#50, #51), actions/setup-node to v7 (#41)
+- Pin dependencies and extend the shared Renovate preset (#43, #44, #42)
+
 ---
 
 # Changelog
