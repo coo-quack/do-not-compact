@@ -1,3 +1,9 @@
+## v1.1.3 (2026-09-26)
+
+### Maintenance
+
+- Update Node.js to v24.21.0 in CI (#56, #55)
+
 ## v1.1.1 (2026-03-31)
 
 ### Security
