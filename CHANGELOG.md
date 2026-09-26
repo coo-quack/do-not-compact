@@ -1,3 +1,9 @@
+## v1.1.4 (2026-09-26)
+
+### Maintenance
+
+- Publish to npm with trusted publishing (OIDC) instead of a long-lived token (#60)
+
 ## v1.1.3 (2026-09-26)
 
 ### Maintenance
