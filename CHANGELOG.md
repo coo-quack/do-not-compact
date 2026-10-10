@@ -1,3 +1,10 @@
+## v1.1.5 (2026-10-10)
+
+### Maintenance
+
+- Publish to npm only from a job in the `npm-release` environment, which only `main` can deploy to (#65)
+- Update actions/setup-node to v7.1.0 in CI (#64)
+
 ## v1.1.4 (2026-09-26)
 
 ### Maintenance
