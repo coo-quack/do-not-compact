@@ -1,3 +1,9 @@
+## v1.1.6 (2026-10-13)
+
+### Fixes
+
+- `.claude-plugin/plugin.json` stayed at 1.1.0 while 1.1.1 to 1.1.5 were released, so `claude plugin update` reported installed copies as current. It now carries the package version, and CI fails when the two disagree (#70). The hooks have not changed since 1.1.0
+
 ## v1.1.5 (2026-10-10)
 
 ### Maintenance
