@@ -1,3 +1,13 @@
+## v1.1.7 (2026-11-20)
+
+### Maintenance
+
+- Keep automated pull requests up to date with `develop`
+- Publish with Node.js 26.13.1 (#75, #76, #77, #78, #81)
+- Update actions/create-github-app-token to v3.3.0 (#74)
+
+The hooks have not changed since 1.1.0.
+
 ## v1.1.6 (2026-10-13)
 
 ### Fixes
